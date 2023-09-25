@@ -11,17 +11,19 @@ const port = 3000;
 
 let database = "test";
 
-const db = mysql2.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "970603LLF",
-  database: database,
-});
+const db = mysql2
+  .createPool({
+    host: "localhost",
+    user: "root",
+    password: "970603LLF",
+    database: database,
+  })
+  .promise();
 
-db.connect((err) => {
-  if (err) throw err;
-  console.log(`Connected to ${database} database`);
-});
+// db.connect((err) => {
+//   if (err) throw err;
+//   console.log(`Connected to ${database} database`);
+// });
 
 global.db = db;
 global.database = database;

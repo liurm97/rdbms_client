@@ -1,13 +1,12 @@
+// Will need to work on Async Await & Promises
 exports.checkTableExists = async (filename, database, sqlquery) => {
   let exists = 0;
-  database.query(sqlquery, async (err, result) => {
-    console.log(result);
-    await result.forEach((obj) => {
-      if (obj.Tables_in_test === filename) {
-        exists = 1;
-        console.log(exists);
-        return exists;
-      }
-    });
-  });
+  const [result] = await database.query(sqlquery);
+  for (obj of result) {
+    if (obj.Tables_in_test === filename) {
+      exists = 1;
+      break;
+    }
+  }
+  return exists;
 };
