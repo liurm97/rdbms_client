@@ -1,0 +1,30 @@
+<script>
+  // alert("Success!")
+</script>
+<section class="list-database">
+  <h1>List of Databases available</h1>
+  <ol>
+    <% databases[0].forEach((d)=> { %>
+      <li>
+        <%=JSON.stringify(d.Database).slice(1,-1) %>
+          <% }) %>
+            <%#=JSON.stringify(databases[0][0].Database) %>
+      </li>
+  </ol>
+</section>
+<section class="create-database">
+  <h1>Create Database</h1>
+  <form action="/database/create" method="post">
+    <label for="datatbaseName">Database Name: </label>
+    <input type="text" name="databaseName" id="databaseName">
+    <input type="submit" name="submit" id="submit">
+  </form>
+</section>
+<section class="delete-database">
+  <h1>Delete Database</h1>
+  <form action="/database/delete" method="post">
+    <label for="datatbaseName">Database Name: </label>
+    <input type="text" name="databaseName" id="databaseName">
+    <input type="submit" name="submit" id="submit">
+  </form>
+</section>
