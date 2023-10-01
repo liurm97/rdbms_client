@@ -41,13 +41,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 const homeRouter = require("./server/routes/homeRouter");
 const tableRouter = require("./server/routes/tableRouter");
-const loginRouter = require("./server/routes/databaseRouter");
+const databaseRouter = require("./server/routes/databaseRouter");
 
 // Home page - <a>tags to /tables & /databases
 app.use("/", homeRouter);
 
 // Show table page - functionalities
 app.use("/table", tableRouter);
+app.use("/database", databaseRouter);
 app.use(errorHandler);
 
 // // create database page - functionalities
