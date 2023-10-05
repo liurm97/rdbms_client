@@ -8,7 +8,8 @@ exports.renderDatabase = async (req, res, next) => {
       .render("database.ejs", { title: "Database", databases: result });
   } catch (err) {
     console.log(err);
-    res.status(401).send("Database already exists. Please try again 😢");
+    // res.status(401).send("Database already exists. Please try again 😢");
+    res.status(301).render("database.ejs");
   }
 };
 

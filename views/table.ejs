@@ -2,7 +2,15 @@
   <h1>Create Table</h1>
 </div>
 <form action="/table/create" method="post">
+  <div class="define-database" style="margin-bottom: 1rem;">
+    <label for="database">Select Database</label>
+    <input type="text" name="databaseName" id="databaseName">
+  </div>
+  <div class="define-table">
+  <label for="tableName">Table Name</label>
   <input type="text" name="tableName" id="tableName">
+  <label for="column">Column</label>
   <input type="text" name="columns" id="columns">
   <input type="submit" name="submit" id="submit">
+</div>
 </form>

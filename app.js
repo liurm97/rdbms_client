@@ -9,7 +9,7 @@ const port = 3000;
 
 // Create connection to mysql database
 
-let database = "test";
+let database = "";
 
 const db = mysql2
   .createPool({
